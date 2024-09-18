@@ -1,0 +1,19 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+eimu KEYWORD1
+EIMU KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getRPY  KEYWORD2
+getRPYrate  KEYWORD2
+getAcc KEYWORD2
+getRPYvariance  KEYWORD2
+getRPYrateVariance  KEYWORD2
+getAccVariance  KEYWORD2
+getFilterGain  KEYWORD2
+getRefFrame  KEYWORD2
