@@ -17,3 +17,4 @@ getRPYrateVariance  KEYWORD2
 getAccVariance  KEYWORD2
 getFilterGain  KEYWORD2
 getRefFrame  KEYWORD2
+setRefFrame  KEYWORD2

@@ -17,7 +17,8 @@ public:
 
   // bool setFilterGain(float);
   void getFilterGain(float &);
-  void getRefFrame(String &);
+  void getRefFrame(int &);
+  bool setRefFrame(int);
 
   void getRPY(float &, float &, float &);
   void getGyro(float &, float &, float &);
