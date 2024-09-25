@@ -34,16 +34,31 @@ void setup()
   Serial.begin(115200);
 
   // wait for the imu module to fully setup
-  for (int i = 1; i <= 10; i += 1)
+  for (int i = 1; i <= 6; i += 1)
   {
     delay(1000);
     Serial.println(i);
   }
 
-  imu.getRefFrame(ref_frame);
-  Serial.print("The EIMU is using the ");
-  Serial.print(ref_frame);
-  Serial.println(" reference frame");
+  // change the reference frame to ENU frame (0 - NWU,  1 - ENU,  2 - NED)
+  imu.setRefFrame(1);
+
+  // check the refence frame the IMU is working in (0 - NWU,  1 - ENU,  2 - NED)
+  int ref_frame_id;
+  imu.getRefFrame(ref_frame_id);
+  if (ref_frame_id == 0)
+    Serial.println("Reference Frame is North-West-Up (NWU)");
+  else if (ref_frame_id == 1)
+    Serial.println("Reference Frame is East-North-Up (ENU)");
+  else if (ref_frame_id == 2)
+    Serial.println("Reference Frame is North-East-Down (NED)");
+
+  // wait for the imu module to fully setup
+  for (int i = 1; i <= 4; i += 1)
+  {
+    delay(1000);
+    Serial.println(i);
+  }
 
   prevSampleTime = millis();
 }
@@ -57,17 +72,17 @@ void loop()
 
     imu.getRPY(roll, pitch, yaw); // read roll, pitch, yaw in radians
 
-    // Serial.print(roll, 4);
-    // Serial.print(", ");
-    // Serial.print(pitch, 4);
-    // Serial.print(", ");
-    // Serial.println(yaw, 4);
+    Serial.print(roll, 4);
+    Serial.print(", ");
+    Serial.print(pitch, 4);
+    Serial.print(", ");
+    Serial.println(yaw, 4);
 
-    Serial.print(roll * toDeg, 1);
-    Serial.print(", ");
-    Serial.print(pitch * toDeg, 1);
-    Serial.print(", ");
-    Serial.println(yaw * toDeg, 1);
+    // Serial.print(roll * toDeg, 1);
+    // Serial.print(", ");
+    // Serial.print(pitch * toDeg, 1);
+    // Serial.print(", ");
+    // Serial.println(yaw * toDeg, 1);
 
     prevSampleTime = millis();
   }

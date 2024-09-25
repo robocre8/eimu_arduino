@@ -21,22 +21,20 @@ void EIMU::getFilterGain(float &filterGain)
   valC = 0.0;
 }
 
-void EIMU::getRefFrame(String &ref_frame)
+void EIMU::getRefFrame(int &ref_frame_id)
 {
   get("/frame-id");
 
-  int frame_id = (int)valA;
-
-  if (frame_id == 0)
-    ref_frame = "NWU";
-  else if (frame_id == 1)
-    ref_frame = "ENU";
-  else if (frame_id == 2)
-    ref_frame = "NED";
+  ref_frame_id = (int)valA;
 
   valA = 0.0;
   valB = 0.0;
   valC = 0.0;
+}
+
+bool EIMU::setRefFrame(int ref_frame_id)
+{
+  send("/frame-id", (float)ref_frame_id);
 }
 
 void EIMU::getRPY(float &roll, float &pitch, float &yaw)
