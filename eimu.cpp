@@ -21,7 +21,7 @@ void EIMU::getFilterGain(float &filterGain)
   valC = 0.0;
 }
 
-void EIMU::getRefFrame(int &ref_frame_id)
+void EIMU::getRefFrame(int &ref_frame_id) //(0 - NWU, 1 - ENU, 2 - NED)
 {
   get("/frame-id");
 
@@ -32,7 +32,7 @@ void EIMU::getRefFrame(int &ref_frame_id)
   valC = 0.0;
 }
 
-bool EIMU::setRefFrame(int ref_frame_id)
+bool EIMU::setRefFrame(int ref_frame_id) //(0 - NWU, 1 - ENU, 2 - NED)
 {
   send("/frame-id", (float)ref_frame_id);
 }

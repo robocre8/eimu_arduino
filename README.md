@@ -68,8 +68,11 @@ A simple way to get started is simply to try out and follow the example code
 - get accZ variances in 10dp
   > imu.`getAzVariance`(&az_var)
 
-- get get filter gain in float
+- get filter gain in float
   > imu.`getFilterGain`(&gain)
 
-- get get reference frame in string
-  > imu.`getRefFrame`(&ref_frame)
+- get reference frame id (0 - NWU,  1 - ENU,  2 - NED)
+  > imu.`getRefFrame`(&ref_frame_id)
+
+- set reference frame id (0 - NWU,  1 - ENU,  2 - NED)
+  > imu.`setRefFrame`(ref_frame_id)
