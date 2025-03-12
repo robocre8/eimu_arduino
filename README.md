@@ -1,5 +1,5 @@
 ## Easy IMU Arduino I2C Lib
-This library helps communicate with the already setup **`Easy IMU Module`** (i.e **`MPU9250 EIMU Module`**) with  arduino microcontroller projects via I2C, after successful setup with the [eimu_setup_application](https://github.com/samuko-things-company/eimu_setup_application).
+This library helps communicate with the already setup **`Easy IMU Module`** (i.e **`MPU9250 EIMU Module`**) with  arduino microcontroller projects via I2C, after successful setup with the [eimu_setup_application](https://robocre8.gitbook.io/robocre8/eimu-tutorials/how-to-calibrate-and-setup-the-eimu).
 
 > you can use it in your Arduino-based robotics project (e.g Arduino UNO, Arduino NANO, Arduino MEGA, Esp32, etc.)
 
@@ -9,7 +9,7 @@ A simple way to get started is simply to try out and follow the example code
 ## How to Use the Library
 - Ensure you have the **`Easy IMU Module`** (i.e **`MPU9250 EIMU Module`**). Calibrate it and set it up using the **`eimu_setup_application`**.
 
-- Download download the library by clicking on the green Code button above (or clone it)
+- Download the library by clicking on the green Code button above (or clone it)
   > if you download it, extract it and change the folder name to `eimu_arduino`
 
 - Move the downloaded library file - **`eimu_arduino`** - to your Arduino library folder
